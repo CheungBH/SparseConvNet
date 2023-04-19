@@ -71,7 +71,21 @@ class SubmanifoldConvolutionFunction(Function):
             input_metadata,
             spatial_size,
             dimension,
-            filter_size):
+            filter_size,
+            only_forward=False
+    ):
+        if only_forward:
+            output_features = input_features.new()
+            sparseconvnet.SCN.SubmanifoldConvolution_updateOutput(
+                spatial_size,
+                filter_size,
+                input_metadata,
+                input_features,
+                output_features,
+                weight,
+                bias)
+            return output_features
+
         ctx.input_metadata = input_metadata
         ctx.dimension = dimension
         output_features = input_features.new()

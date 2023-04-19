@@ -30,7 +30,7 @@ from .sparseConvNetTensor import SparseConvNetTensor
 from .sparseToDense import SparseToDense
 from .sparsify import Sparsify, SparsifyFCS
 from .spectral_norm import spectral_norm
-from .submanifoldConvolution import SubmanifoldConvolution, ValidConvolution
+from .submanifoldConvolution import SubmanifoldConvolution, ValidConvolution, SubmanifoldConvolutionFunction
 from .tables import *
 from .unPooling import UnPooling
 from .utils import append_tensors, AddCoords, add_feature_planes, concatenate_feature_planes, compare_sparse
