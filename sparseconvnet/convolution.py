@@ -79,7 +79,22 @@ class ConvolutionFunction(Function):
             output_spatial_size,
             dimension,
             filter_size,
-            filter_stride):
+            filter_stride,
+            only_forward=False):
+        output_features = input_features.new()
+        if only_forward:
+            sparseconvnet.SCN.Convolution_updateOutput(
+                input_spatial_size,
+                output_spatial_size,
+                filter_size,
+                filter_stride,
+                input_metadata,
+                input_features,
+                output_features,
+                weight,
+                bias)
+            return output_features
+
         output_features = input_features.new()
         ctx.input_metadata = input_metadata
         ctx.dimension = dimension

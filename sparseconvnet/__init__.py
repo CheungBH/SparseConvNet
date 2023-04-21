@@ -10,7 +10,7 @@ from .activations import Tanh, Sigmoid, ReLU, LeakyReLU, ELU, SELU, BatchNormELU
 from .averagePooling import AveragePooling
 from .batchNormalization import BatchNormalization, BatchNormReLU, BatchNormLeakyReLU, MeanOnlyBNLeakyReLU
 from .classificationTrainValidate import ClassificationTrainValidate
-from .convolution import Convolution
+from .convolution import Convolution, ConvolutionFunction
 from .deconvolution import Deconvolution
 from .denseToSparse import DenseToSparse
 from .dropout import Dropout, BatchwiseDropout
