@@ -33,6 +33,7 @@ class AddTable(torch.nn.Sequential):
         output = SparseConvNetTensor()
         output.metadata = input[0].metadata
         output.spatial_size = input[0].spatial_size
+        output.idx = input[0].idx
         output.features = sum([i.features for i in input])
         return output
 
